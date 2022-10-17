@@ -52,7 +52,9 @@ You can view a large set of jokes randomly obtained using the API.
 The joke is updated by pressing "like"/"dislike" buttons or by swiping in left/right directions.
 Also, you can open the current joke in the browser by going to that option in the menu.
 
-![App_Screen](images/flutter_demo.mp4)
+https://user-images.githubusercontent.com/69922821/196240424-92dc7725-2a68-45ba-8afa-62a6d5bddab8.mp4
+
+
 
 <!-- CONTRIBUTING -->
 ## Contributing
