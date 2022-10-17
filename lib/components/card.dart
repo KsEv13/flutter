@@ -8,18 +8,12 @@ class JokeText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        constraints: const BoxConstraints(
-            minHeight: 30, minWidth: 30),
-        margin: const EdgeInsets.fromLTRB(30, 0, 30, 40),
+        constraints: const BoxConstraints(minHeight: 30, minWidth: 30),
+        margin: const EdgeInsets.fromLTRB(30, 0, 30, 10),
         padding: const EdgeInsets.all(20),
         decoration: const ShapeDecoration(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(13),
-              bottomRight: Radius.circular(13),
-              topLeft: Radius.circular(13),
-              topRight: Radius.circular(13),
-            ),
+            borderRadius: BorderRadius.all(Radius.circular(13)),
           ),
           gradient: LinearGradient(
             colors: <Color>[
@@ -30,7 +24,7 @@ class JokeText extends StatelessWidget {
               Color(0xFF24BBB0),
             ],
           ),
-        /*decoration: BoxDecoration(
+          /*decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(7),
             color: Color.alphaBlend(Colors.black, Colors.pink),
         ),*/
@@ -39,9 +33,9 @@ class JokeText extends StatelessWidget {
           text,
           textAlign: TextAlign.center,
           style: const TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.w400,
+            color: Colors.white,
+            fontSize: 22,
+            fontWeight: FontWeight.w400,
           ),
         ));
   }

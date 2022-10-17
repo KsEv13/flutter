@@ -18,14 +18,15 @@ class Empty {
   List<Instruction> instructions;
 
   factory Empty.fromJson(Map<String, dynamic> json) => Empty(
-    greeting: json["greeting"],
-    instructions: List<Instruction>.from(json["instructions"].map((x) => Instruction.fromJson(x))),
-  );
+        greeting: json["greeting"],
+        instructions: List<Instruction>.from(
+            json["instructions"].map((x) => Instruction.fromJson(x))),
+      );
 
   Map<String, dynamic> toJson() => {
-    "greeting": greeting,
-    "instructions": List<dynamic>.from(instructions.map((x) => x.toJson())),
-  };
+        "greeting": greeting,
+        "instructions": List<dynamic>.from(instructions.map((x) => x.toJson())),
+      };
 }
 
 class Instruction {
@@ -42,16 +43,16 @@ class Instruction {
   String value;
 
   factory Instruction.fromJson(Map<String, dynamic> json) => Instruction(
-    iconUrl: json["icon_url"],
-    id: json["id"],
-    url: json["url"],
-    value: json["value"],
-  );
+        iconUrl: json["icon_url"],
+        id: json["id"],
+        url: json["url"],
+        value: json["value"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "icon_url": iconUrl,
-    "id": id,
-    "url": url,
-    "value": value,
-  };
+        "icon_url": iconUrl,
+        "id": id,
+        "url": url,
+        "value": value,
+      };
 }

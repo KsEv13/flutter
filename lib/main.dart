@@ -1,10 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_hw/components/card.dart';
-import 'package:flutter_hw/components/buttons.dart';
-import 'package:flutter_hw/pages/MyHomePage.dart';
-
+import 'package:flutter_hw/pages/my_home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,8 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter',
-      theme: ThemeData(
-          primarySwatch: Colors.teal, backgroundColor: Colors.teal.shade800),
+      theme: ThemeData(primarySwatch: Colors.teal),
       home: const MyHomePage(title: 'Tinder. Chuck Norris'),
     );
   }
