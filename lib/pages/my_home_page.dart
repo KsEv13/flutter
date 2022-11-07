@@ -5,6 +5,7 @@ import 'package:flutter_hw/components/joke_module.dart';
 
 import '../components/buttons.dart';
 import '../components/card.dart';
+import '../pages/favourite.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:swipe_cards/swipe_cards.dart';
@@ -105,9 +106,10 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text(
                 'Menu',
                 style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.white),
+                  fontSize: 24,
+                  fontWeight: FontWeight.w800,
+                  color: Colors.white,
+                ),
               ),
             ),
             ListTile(
@@ -121,6 +123,23 @@ class _MyHomePageState extends State<MyHomePage> {
               onTap: () {
                 _launchURL(_swipeItems[_ind].content[1]);
                 Navigator.pop(context);
+              },
+            ),
+
+
+            ListTile(
+              title: const Text(
+                'Favourite Jokes',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                ),
+              ),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => new Favourites())
+                );
+                //Navigator.pushNamed(context, '/favourite');
               },
             ),
           ],
@@ -139,8 +158,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       JokeText(
-                          text: _swipeItems[index]
-                              .content[0]), //swipeItems[index].content.text
+                        //ADDING TO TEST
+                        text:  _swipeItems[index].content[0]),
+                          //text: _swipeItems[index].content[0]), //swipeItems[index].content.text
                     ],
                   ),
                 ),
@@ -152,8 +172,11 @@ class _MyHomePageState extends State<MyHomePage> {
             itemChanged: (SwipeItem item, int index) {},
           ),
         ),
+
+        //ADDED TO TEST
       ]),
-      bottomSheet: Buttons(like: _like, dislike: _dislike),
+      bottomSheet: Buttons(like: _like, save: ()=> {
+        Favourites.favouriteDataList.add(_swipeItems[_ind].content[0])}, dislike: _dislike),
     ));
   }
 

@@ -24,10 +24,6 @@ class JokeText extends StatelessWidget {
               Color(0xFF24BBB0),
             ],
           ),
-          /*decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(7),
-            color: Color.alphaBlend(Colors.black, Colors.pink),
-        ),*/
         ),
         child: Text(
           text,
@@ -37,6 +33,7 @@ class JokeText extends StatelessWidget {
             fontSize: 22,
             fontWeight: FontWeight.w400,
           ),
-        ));
+        )
+    );
   }
 }

@@ -1,10 +1,12 @@
 import "package:flutter/material.dart";
 
 class Buttons extends StatelessWidget {
-  const Buttons({super.key, required this.like, required this.dislike});
+  const Buttons({super.key,
+    required this.like, required this.dislike, required this.save});
 
   final VoidCallback like;
   final VoidCallback dislike;
+  final VoidCallback save;
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +25,21 @@ class Buttons extends StatelessWidget {
               splashColor: Colors.pink,
               child: const Icon(Icons.heart_broken_sharp),
             ),
+
+            FloatingActionButton(
+              onPressed: save,
+              tooltip: 'save',
+              foregroundColor: Colors.black,
+              backgroundColor: Colors.blueGrey.shade300,
+              splashColor: Colors.red.shade400,
+              child: const Icon(Icons.star_purple500_sharp),
+            ),
+
             FloatingActionButton(
               onPressed: like,
               tooltip: 'like',
               foregroundColor: Colors.black,
-              backgroundColor: Colors.pink.shade400,
+              backgroundColor: Colors.pinkAccent.shade200,
               splashColor: Colors.teal.shade300,
               child: const Icon(Icons.favorite_sharp),
             ),
